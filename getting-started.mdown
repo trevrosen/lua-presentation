@@ -1,0 +1,40 @@
+# Getting started
+It's easy to get up and running with Lua.  You'll need to install three things so that you can follow along in the presentation:
+
+**lua** - the interpretter itself
+
+**luarocks** - a component distribution system like RubyGems for distrubiting Rocks (self-contained libs like Ruby gems or Python eggs)
+
+**luasocket** - a LuaRock for socket IO
+
+
+## Installing on OSX
+Use Homebrew:
+
+**Note:** you need to update Homebrew to ensure that you catch a recent patch to make Lua 5.1.4 the default instead of the more bleeding edge 5.2.  Lots of libraries aren't fully compatible w/ 5.2 yet, including ones we're using tonight.
+
+<pre>
+$> brew update
+$> brew install lua luarocks
+$> luarocks install luasocket
+</pre>
+
+
+## Installing on (Ubuntu 12.04) Linux
+
+<pre>
+$> sudo apt-get install lua5.1 luarocks
+$> sudo luarocks install luasocket
+</pre>
+
+## Lua interactive
+After you've installed Lua, you can get into the interactive shell like this:
+
+<pre>
+$> lua
+Lua 5.1.4  Copyright (C) 1994-2008 Lua.org, PUC-Rio
+> print('hello, world!')
+hello, world!
+>
+</pre>
+Exit the shell with Ctrl-D
