@@ -5,6 +5,10 @@
 
 -- These are formally best described as "generators"  http://en.wikipedia.org/wiki/Generator_(computer_programming)
 
+
+-- First we will set up some tables to work with in the following examples.
+-- The first table acts as an array of integers (and therefore has implied integer indices)
+-- The second table has string keys.
 local example_table = {10, 20, 30, 40, 50}
 local example_table2 = {
   food = "sushi",
