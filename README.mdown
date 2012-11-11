@@ -1,4 +1,4 @@
-# E a Lua - no a Ruby
+# E a Lua - não a Ruby
 _"this is Lua - it's not Ruby"_
 
 At the November 2012 Austin.rb meeting, we will introduce [the Lua programming language](http://www.lua.org) from the point of view of a Rubyist.  Lua is a language with many interesting applications, a fascinating history, and a lot of visibility in a wide array of uses from embedded scripting engines to cross-platform mobile game programming.
