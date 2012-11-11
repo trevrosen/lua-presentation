@@ -3,6 +3,9 @@
 
 -- luarocks install mobdebug
 
+-- open an interactive Lua session
+-- run "require('mobdebug').listen()"
+-- to turn on the remote debugging server
 
 -- kick off a debug client
 require('mobdebug').start()

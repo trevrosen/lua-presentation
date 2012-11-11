@@ -2,7 +2,7 @@
 --like in JS, you use a keyword to limit to the current scope
 
 local io   = require('io') --get an IO object from the stdlib
-local http = require('socket.http') --from LuaSocket library
+local http = require('socket.http') --from LuaSocket library installed via luarocks
 
 print("Whose Twitter feed do you want to retrieve?")
 local username = io.read() -- read from stdin like Ruby's "gets"
