@@ -23,9 +23,9 @@ Lua makes a lot of sense, but there are a number of [gotchas you might want to c
 * Regular stuff like socket IO and file manipulation is implemented in modules instead of Lua's stdlib in order to keep the core of the language as small as possible
 * A **table** is sort of like an array, sort of like a hash, and is Lua's only complex data type.
 * Indices for tables start at 1 instead of 0
+* Tables are objects - inheritance and other "standard OOP" behaviors are implemented with them in a prototypal way reminiscent of Javascript
 * All numbers are floating point
 * Functions can return multiple values
-
 
 
 ## Interesting Uses
