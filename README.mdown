@@ -1,5 +1,5 @@
 # E a Lua - não a Ruby
-_"this is Lua - it's not Ruby"_
+_"This is Lua - it's not Ruby"_
 
 At the November 2012 Austin.rb meeting, we will introduce [the Lua programming language](http://www.lua.org) from the point of view of a Rubyist.  Lua is a language with many interesting applications, a fascinating history, and a lot of visibility in a wide array of uses from embedded scripting engines to cross-platform mobile game programming.
 
@@ -20,13 +20,14 @@ Lua has been in active use since its introduction in 1994.
 
 Lua makes a lot of sense, but there are a number of [gotchas you might want to check out](http://www.luafaq.org/gotchas.html).  Among them are these:
 
-* Regular stuff like socket IO is implemented in modules instead of Lua's stdlib in order to keep the core of the language as small as possible
-* Patterns are NOT regex - even if they sorta look like they are
 * A **table** is sort of like an array, sort of like a hash, and is Lua's only complex data type.
 * Indices for tables start at 1 instead of 0
-* Tables are objects - inheritance and other "standard OOP" behaviors are implemented with them in a prototypal way reminiscent of Javascript
 * All numbers are floating point
 * Functions can return multiple values
+* Regular stuff like socket IO is implemented in modules instead of Lua's stdlib in order to keep the core of the language as small as possible.  Keep in mind that Ruby's stdlib **is** pretty big (xml parsers, web servers, templating, lots of protocols, etc), so we're kind of spoiled.
+* Patterns are NOT regex - even if they sort of look like they are
+* Table keys don't look like strings. They look like undeclared variables, but become strings through syntactic sugar.
+* Tables are Lua's only things resembling classic "objects" - inheritance and other standard OOP behaviors are implemented with them in a prototypal way reminiscent of Javascript
 
 
 ## Interesting Uses
