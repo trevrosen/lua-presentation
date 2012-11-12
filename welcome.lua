@@ -1,4 +1,4 @@
--- E a Lua - no a Ruby
+-- E a Lua - não a Ruby
 
 Meeting = {
   welcome = "Meet Lua!"
