@@ -1,5 +1,7 @@
 -- Sample Nmap Scripting Engine (NSE) script
 -- Finds Rails applications and prints their title element contents
+--
+-- USAGE: nmap -n -Pn -p 3000 --open --script rails-dev-finder.nse 10.0.1.0/24
 
 description = [[ Find machines running Rails apps in dev mode and report on the title of their app ]]
 
