@@ -25,7 +25,7 @@ function action(host, port)
   end
 end
 
--- Grab the extracted title from the HTML in the response body
 function title_from_body(body)
   return string.match(body,"<title>(.+)</title>")
 end
+
