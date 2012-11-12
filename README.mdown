@@ -20,7 +20,8 @@ Lua has been in active use since its introduction in 1994.
 
 Lua makes a lot of sense, but there are a number of [gotchas you might want to check out](http://www.luafaq.org/gotchas.html).  Among them are these:
 
-* Regular stuff like socket IO and file manipulation is implemented in modules instead of Lua's stdlib in order to keep the core of the language as small as possible
+* Regular stuff like socket IO is implemented in modules instead of Lua's stdlib in order to keep the core of the language as small as possible
+* Patterns are NOT regex - even if they sorta look like they are
 * A **table** is sort of like an array, sort of like a hash, and is Lua's only complex data type.
 * Indices for tables start at 1 instead of 0
 * Tables are objects - inheritance and other "standard OOP" behaviors are implemented with them in a prototypal way reminiscent of Javascript
