@@ -35,7 +35,6 @@ end
 
 print "-----------------------------------------------------------"
 
--- pairs() is an iterator function for keys and values
 print "Use pairs() to print indices and their values..."
 for k,v in pairs(example_table) do print(k,v) end
 
@@ -75,12 +74,12 @@ function do_and_print_to_each(table, f)
   end
 end
 
-print "Get the logs of all of them:"
+print "Running the custom iterator -- get the log of each number"
 do_and_print_to_each(example_table, math.log)
 
 print "-----------------------------------------------------------"
 
-print "Use each as a ceiling for generating a random number"
+print "Running the custom iterator -- use each as a ceiling for generating a random number"
 do_and_print_to_each(example_table, math.random)
 
 

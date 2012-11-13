@@ -3,7 +3,7 @@
 -- The syntax looks a lot like Javascript objects
 
 foo = {
-  name = "A glorious Foo"
+  name = "A glorious Foo" -- "name" looks like an declared variable, but acts as a table key
 }
 
 foo.bar = "bar string, yo"
