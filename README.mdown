@@ -21,12 +21,12 @@ Lua has been in active use since its introduction in 1994.
 Lua makes a lot of sense, but there are a number of [gotchas you might want to check out](http://www.luafaq.org/gotchas.html).  Among them are these:
 
 * A **table** is sort of like an array, sort of like a hash, and is Lua's only complex data type.
-* Indices for tables start at 1 instead of 0
+* [Indices for tables start at 1 instead of 0](http://www.luafaq.org/index.html#T1.5.1)
 * All numbers are floating point
 * Functions can return multiple values
 * Regular stuff like socket IO is implemented in modules instead of Lua's stdlib in order to keep the core of the language as small as possible.  Keep in mind that Ruby's stdlib **is** pretty big (xml parsers, web servers, templating, lots of protocols, etc), so we're kind of spoiled.
-* Patterns are NOT regex - even if they sort of look like they are
-* Table keys don't look like strings. They look like undeclared variables, but become strings through syntactic sugar.
+* Patterns are NOT full-on (i.e. POSIX/PCRE) regex - even if they sort of look like they are
+* Table keys don't look like strings. They look like undeclared variables, but… they work :-)
 * Tables are Lua's only things resembling classic "objects" - inheritance and other standard OOP behaviors are implemented with them in a prototypal way reminiscent of Javascript
 
 
@@ -39,9 +39,12 @@ Lua is popping up all over the place.  Its portability has always been a core fe
 * [World of Warcraft interface scripting](http://www.wowwiki.com/Lua)
 * [Various pieces of hardware (including Lego Mindstorms NXT)](http://en.wikipedia.org/wiki/Category:Lua-scriptable_hardware)
 * [A bunch of Lua-scriptable game engines](http://en.wikipedia.org/wiki/Category:Lua-scriptable_game_engines)
+* [Tons of games you can straight-up script with Lua (132+)](http://en.wikipedia.org/wiki/Category:Lua-scripted_video_games)
 
+## Installing <a id="installing"></a>
+We will need two things: the Lua interpreter and the LuaRocks package system (similar to RubyGems)
 
-## Installing on OSX
+### Installing on OSX
 Use Homebrew:
 
 **Note:** you need to update Homebrew to ensure that you catch a recent patch to make Lua 5.1.4 the default instead of the more bleeding edge 5.2.  Lots of libraries aren't fully compatible w/ 5.2 yet, including ones we're using tonight.
@@ -53,7 +56,7 @@ $> luarocks install luasocket
 </pre>
 
 
-## Installing on (Ubuntu 12.04) Linux
+### Installing on (Ubuntu 12.04) Linux
 
 <pre>
 $> sudo apt-get install lua5.1 luarocks
