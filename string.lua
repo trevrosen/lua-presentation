@@ -1,6 +1,5 @@
 -- A couple basic string functions
 
-
 -- string.format
 -- works like C's printf
 -- http://www.cplusplus.com/reference/clibrary/cstdio/printf/

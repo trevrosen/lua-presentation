@@ -14,7 +14,7 @@ OrigAccount = {
   balance = 5000 --this works like an attribute
 }
 
-Account = OrigAccount -- let's act on a copy
+Account = OrigAccount -- let's act on a copy so this script can all execute at once
 function Account.withdraw(amt)
   Account.balance = Account.balance - amt
 end
@@ -22,6 +22,7 @@ end
 Account.withdraw(1000)
 print(Account.balance)
 
+-- Look at us defining functions right on an object - just like we can in Ruby!
 -- But this is kind of dumb.  We are acting on Account from inside the body of one
 -- of its methods.  That violates the OOP principle of objects having independent
 -- lifecycles.
@@ -36,7 +37,7 @@ end
 
 -- This gives us the means to act on a copy of the original object
 a1 = Account
-Account = nil -- prove we are no longer acting on the original Account object
+Account = nil -- prove we are no longer acting on the original Account object (this is why we need OrigAccount)
 
 a1.withdraw(a1, 1000)
 print(a1.balance)
@@ -58,7 +59,7 @@ a1.short_withdraw(a1, 1000)
 print(a1.balance)
 
 -- But this is of limited utility.  We've got an object that we can define
--- state and behavior on, but we have to sort of clone it.  What we'd rather
+-- state and behavior on, but we have to sort of clone it for use.  What we'd rather
 -- have is a template for making lots of similar objects - a "class" in normal OOP parlance.
 
 -- Again we must start with an empty container, to hold the state and functions defining the class 
@@ -66,10 +67,11 @@ print(a1.balance)
 OopAccount = {} 
 
 -- Every class needs a constructor!
+-- warning: the idiom below will tie your brain in knots
 function OopAccount:new (o)
-  o = o or {}   -- create object if user does not provide one
-  setmetatable(o, self) -- you can think of a metatable is a related place for table members to be defined
-  self.__index = self -- the special "__index" metamethod behaves a little bit like Ruby's method_missing
+  o = o or {}            -- create object if user does not provide one
+  setmetatable(o, self)  -- you can think of a metatable as being a bit like an Eigenclass in Ruby
+  self.__index = self    -- the special "__index" metamethod behaves a little bit like Ruby's method_missing
   return o
 end
 
@@ -87,8 +89,4 @@ a:deposit(5000000)
 print(a.balance)
 
 a:goodtimes("Alice's Restaurant")
-
-
--- Think of "self.__index" as a way of setting the place where unknown fields will be checked for
--- This is reminiscent of the way that it works in JS
--- to make a constructor, default values for attributes, etc
+a:goodtimes("Austin.rb")
