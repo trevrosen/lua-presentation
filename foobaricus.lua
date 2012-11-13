@@ -7,10 +7,10 @@
 -- unless the expression is true, an error is raised
 assert(foobaricus, "you must have a 'foobaricus' table in your environment")
 
-foobaricus.fun()
+foobaricus.fun() -- will throw error unless foobaricus.fun has been defined
 
 foobaricus.zanzibar = function (name)
-  print("We are taking "..name.." to Zanzibar")
+  print(string.format("We are taking %s to Zanzibar", name)) -- works like printf
 end
 
 
