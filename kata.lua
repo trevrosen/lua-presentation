@@ -65,9 +65,26 @@ function CreditCard:validate()
   end
 end
 
+-- Implement Luhn algorithm for checksum -- http://en.wikipedia.org/wiki/Luhn_algorithm
 function CreditCard:checksum_is_valid()
+  reversed_number = self.number:reverse()
+  temp_array      = {}
+  sum             = 0
 
-  return true
+  for i=1, #reversed_number do
+    num = tonumber(reversed_number:sub(i,i))
+    if i % 2 == 0 then
+      table.insert(temp_array, i, (num + num))
+    else
+      table.insert(temp_array, i, num)
+    end
+  end
+
+  for _,num in pairs(temp_array) do
+    sum = sum + num
+  end
+  print(sum)
+  return sum % 10 == 0
 end
 
 function CreditCard:size_is_valid()
@@ -76,7 +93,7 @@ function CreditCard:size_is_valid()
   length_for_type = CreditCard.card_stats[cc_type].length
   
   if cc_type == "Visa" then
-    for _,length in pairs(type_length) do
+    for _,length in ipairs(length_for_type) do
       if length == self.number:len() then
         return true
       end
@@ -137,10 +154,14 @@ end
 
 
 
-test_number = "5491030012336655"
-card = CreditCard:new(test_number)
+good_test_number = "5252167810305678"
+bad_test_number  = "5491444444444444"
 
-print(card:validate())
+good_card = CreditCard:new(good_test_number)
+bad_card  = CreditCard:new(bad_test_number)
+
+print(good_card:validate())
+print(bad_card:validate())
 
 
 
