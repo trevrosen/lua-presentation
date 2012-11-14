@@ -43,6 +43,7 @@ CreditCard.card_stats = {
   }
 }
 
+-- Instantiate a CreditCard object with the given number as a string
 function CreditCard:new(number)
   assert(type(number) == "string", "Number must be entered as a string")
   local cc = {}
@@ -52,9 +53,11 @@ function CreditCard:new(number)
   return cc
 end
 
+-- Validate the number against
+-- * known number prefix
+-- * known number length
+-- * Luhn-style checksum
 function CreditCard:validate()
-  print(self.number)
-
   if self:prefix_is_valid()
     and self:size_is_valid()
     and self:checksum_is_valid()
@@ -83,10 +86,11 @@ function CreditCard:checksum_is_valid()
   for _,num in pairs(temp_array) do
     sum = sum + num
   end
-  print(sum)
+
   return sum % 10 == 0
 end
 
+-- Validate size against CreditCard.card_stats
 function CreditCard:size_is_valid()
   cc_type         = self:get_type()
   num_length      = self.number:len()
@@ -104,6 +108,7 @@ function CreditCard:size_is_valid()
   end
 end
 
+-- Validate prefix against CreditCard.card_stats
 function CreditCard:prefix_is_valid()
   prefix  = self:get_prefix()
   cc_type = self:get_type()
@@ -117,7 +122,7 @@ function CreditCard:prefix_is_valid()
   return false
 end
 
-  -- Return the type of the card
+-- Return the type of the card
 function CreditCard:get_type()
   first_digit = self.number:sub(1,1) -- same as string.sub(cc,1,1)
   
@@ -151,8 +156,7 @@ function CreditCard:get_prefix()
 end
 
 
-
-
+---------- USAGE ----------
 
 good_test_number = "5252167810305678"
 bad_test_number  = "5491444444444444"
@@ -162,6 +166,5 @@ bad_card  = CreditCard:new(bad_test_number)
 
 print(good_card:validate())
 print(bad_card:validate())
-
 
 
