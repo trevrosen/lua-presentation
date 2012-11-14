@@ -17,6 +17,14 @@
 --
 --
 --
+--
+--
+--
+--
+--
+--
+--
+--
 -- A Lua implementation of the credit card check quiz
 -- http://www.rubyquiz.com/quiz122.html
 
@@ -156,6 +164,11 @@ function CreditCard:get_prefix()
 end
 
 
+-- even if you cheated it doesn't really matter.
+--
+-- it's wrong anyway.  can you find out where?
+--
+--
 ---------- USAGE ----------
 
 good_test_number = "5252167810305678"

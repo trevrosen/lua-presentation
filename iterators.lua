@@ -11,27 +11,11 @@
 -- The second table has string keys.
 local example_table = {10, 20, 30, 40, 50}
 local example_table2 = {
-  food = "sushi",
-  drink = "sake",
+  food = "feijoãda",
+  drink = "Antarctica Guarana soda",
   fun   = "go-karts"
 }
 
-
--- Since functions are closures, a common idiom in Lua is to contstruct
--- iterators as one function called from the body of another.
-
--- a simple iterator to return the values in a list
-function values(n)
-  local i = 0
-  return function() i= i+1; return n[i] end
-end
-
--- Lua for loops name variables before the "in" and set those variables
--- with a list of expressions after the "in"
-print "Simply print values in a list:"
-for element in values(example_table) do
-  print(element)
-end
 
 print "-----------------------------------------------------------"
 
@@ -54,11 +38,33 @@ print "For tables with string keys instead of indices, it returns nil"
 for i,v in ipairs(example_table2) do print(i,v) end -- => nil output
 
 
--- ipairs is a built-in iterator function that returns a set of
+-- pairs is a built-in iterator function that returns a set of
 -- key/value pairs. You can use it much like Ruby's Enumerable#each_with_index
-for index,value in ipairs(example_table) do
+for index,value in pairs(example_table) do
   print((value * 10).." is an order of magnitude more than the number at index " .. index)
 end
+
+print "-----------------------------------------------------------"
+-- Since functions are closures, a common idiom in Lua is to contstruct
+-- iterators as one function called from the body of another.
+
+-- a simple iterator to return the values in a list
+function values(n)
+  local i = 0
+  local foo = function() 
+    i= i+1 
+    return n[i]
+  end
+  return foo
+end
+
+-- Lua for loops name variables before the "in" and set those variables
+-- with a list of expressions after the "in"
+print "Simply print values in a list:"
+for element in values(example_table) do
+  print(element)
+end
+
 
 
 print "-----------------------------------------------------------"

@@ -55,7 +55,7 @@ end
 a1 = Account
 Account = nil
 
-a1.short_withdraw(a1, 1000)
+a1.short_withdraw(a1, 1000) -- Same as a1:short_withdraw(1000)
 print(a1.balance)
 
 -- But this is of limited utility.  We've got an object that we can define
@@ -64,14 +64,14 @@ print(a1.balance)
 
 -- Again we must start with an empty container, to hold the state and functions defining the class 
 -- and act as a prototype for instances:
-OopAccount = {} 
-
+--
 -- Every class needs a constructor!
 -- warning: the idiom below will tie your brain in knots
-function OopAccount:new (o)
+OopAccount = {} 
+function OopAccount:new(o)
   o = o or {}            -- create object if user does not provide one
-  setmetatable(o, self)  -- you can think of a metatable as being a bit like an Eigenclass in Ruby
-  self.__index = self    -- the special "__index" metamethod behaves a little bit like Ruby's method_missing
+  setmetatable(o, self)  -- metatable is *a bit* like an Eigenclass in Ruby
+  self.__index = self    --  "__index" metamethod behaves a little bit like Ruby's method_missing
   return o
 end
 

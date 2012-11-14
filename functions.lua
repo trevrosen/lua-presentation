@@ -27,6 +27,7 @@ print(other_jump(5))
 
 -- Functions can be passed assigned to variables and passed around like in Javascript
 object_jump = Object.jump
+Object.jump = nil
 print(object_jump(222))
 
 
