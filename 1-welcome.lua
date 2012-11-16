@@ -4,4 +4,4 @@ Meeting = {
   welcome = "Meet Lua!"
 }
 
-print(Meeting.welcome)
+print(Meeting['welcome'])

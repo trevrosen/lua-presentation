@@ -11,7 +11,7 @@ foo.bar = "bar string, yo"
 -- indices w/out keys are indexed contiguously
 bar = {
   "another string", -- index 1
-  name = "THE bar", -- index "name" (but not 2!)
+  name = bar, -- index "name" (but not 2!)
   "yet another string",-- index 2
 }
 

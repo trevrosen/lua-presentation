@@ -20,22 +20,30 @@ local example_table2 = {
 print "-----------------------------------------------------------"
 
 print "Use pairs() to print indices and their values..."
-for k,v in pairs(example_table) do print(k,v) end
+for k,v in pairs(example_table) do 
+  print(k,v) 
+end
 
 print "-----------------------------------------------------------"
 
 print "Or key-value pairs:"
-for k,v in pairs(example_table2) do print(k,v) end
+for k,v in pairs(example_table2) do 
+  print(k,v) 
+end
 
 print "-----------------------------------------------------------"
 
 print "ipairs() is similar, but works only on tables that have integer indices:"
-for i,v in ipairs(example_table) do print(i,v) end -- => outputs implied indices
+for i,v in ipairs(example_table) do 
+  print(i,v) 
+end -- => outputs implied indices
 
 print "-----------------------------------------------------------"
 
-print "For tables with string keys instead of indices, it returns nil"
-for i,v in ipairs(example_table2) do print(i,v) end -- => nil output
+print "For tables with string keys instead of indices, it returns nil\n"
+for i,v in ipairs(example_table2) do 
+  print(i,v) 
+end -- => nil output
 
 
 -- pairs is a built-in iterator function that returns a set of

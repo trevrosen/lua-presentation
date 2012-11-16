@@ -85,7 +85,7 @@ function CreditCard:checksum_is_valid()
   for i=1, #reversed_number do
     num = tonumber(reversed_number:sub(i,i))
     if i % 2 == 0 then
-      table.insert(temp_array, i, (num + num))
+      table.insert(temp_array, i, (num * 2))
     else
       table.insert(temp_array, i, num)
     end
