@@ -8,7 +8,9 @@ description = [[ Find machines running Rails apps in dev mode and report on the 
 categories = {"safe", "discovery"}
 
 require 'stdnse'
-require 'http'
+http = require 'http'
+
+
 
 --Only act on std Rails dev port
 function portrule(host, port)
