@@ -6,7 +6,7 @@ At the November 2012 Austin.rb meeting, we introduce [the Lua programming langua
 This repository contains heavily commented code examples for showing how to do various "getting started"-style things with Lua.
 
 ## History
-Lua was born (and is still officially maintained) at the [Pontifícal Catholic Universiity of Rio de Janeiro](http://www.puc-rio.br/index.html).  The Tecgraf research group there was asked to help the state oil company, PETROBRAS, by creating a language that could be used for manipulating large data sets used in simulations.
+Lua was born (and is still officially maintained) at the [Pontifícal Catholic University of Rio de Janeiro](http://www.puc-rio.br/index.html).  The Tecgraf research group there was asked to help the state oil company, PETROBRAS, by creating a language that could be used for manipulating large data sets used in simulations.
 
 PETROBRAS' status as a state-owned concern included many restrictions on the way the company could spend money, especially as it applied to importing computer technology.  The language tools that PUC/Tecgraf was developing would need to run on any of the various kinds of hardware that the massive oil company had in use -- everything from Unix to Windows to MacOS to a host of embedded systems.
 
